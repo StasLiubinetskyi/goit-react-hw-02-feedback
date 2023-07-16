@@ -1,24 +1,22 @@
 import styled from 'styled-components';
 
 export const FeedbackOptionsContainer = styled.div`
-  display: flex;
-  justify-content: center;
   margin-bottom: 20px;
+  padding-left: 15px;
 `;
 
 export const Button = styled.button`
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #333;
   cursor: pointer;
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 10px;
+  border-color: #d9cccc;
   margin-right: 10px;
-  padding: 10px 15px;
-  transition: background-color 0.3s ease;
+  padding: 5px 15px;
+  background-color: white;
 
   &:hover {
-    background-color: #f0f0f0;
+    background-color: #3d3fa5;
   }
 `;
 

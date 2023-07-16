@@ -36,7 +36,7 @@ class Feedback extends React.Component {
 
     return (
       <div>
-        <Section title="Please leave your feedback">
+        <Section title="Please leave feedback">
           <FeedbackOptions
             options={['Good', 'Neutral', 'Bad']}
             onLeaveFeedback={this.handleLeaveFeedback}
