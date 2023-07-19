@@ -6,9 +6,9 @@ import Notification from './Notification/Notification';
 
 class Feedback extends React.Component {
   state = {
-    Good: 0,
-    Neutral: 0,
-    Bad: 0,
+    good: 0,
+    neutral: 0,
+    bad: 0,
   };
 
   handleLeaveFeedback = option => {
@@ -18,18 +18,18 @@ class Feedback extends React.Component {
   };
 
   countTotalFeedback = () => {
-    const { Good, Neutral, Bad } = this.state;
-    return Good + Neutral + Bad;
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
   };
 
   countPositiveFeedbackPercentage = () => {
-    const { Good } = this.state;
+    const { good } = this.state;
     const total = this.countTotalFeedback();
-    return total > 0 ? Math.round((Good / total) * 100) : 0;
+    return total > 0 ? Math.round((good / total) * 100) : 0;
   };
 
   render() {
-    const { Good, Neutral, Bad } = this.state;
+    const { good, neutral, bad } = this.state;
     const totalFeedback = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
     const hasFeedback = totalFeedback > 0;
@@ -38,16 +38,16 @@ class Feedback extends React.Component {
       <div>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={['Good', 'Neutral', 'Bad']}
+            options={['good', 'neutral', 'bad']}
             onLeaveFeedback={this.handleLeaveFeedback}
           />
         </Section>
         <Section title="Statistics">
           {hasFeedback ? (
             <Statistics
-              good={Good}
-              neutral={Neutral}
-              bad={Bad}
+              good={good}
+              neutral={neutral}
+              bad={bad}
               total={totalFeedback}
               positivePercentage={positivePercentage}
             />
